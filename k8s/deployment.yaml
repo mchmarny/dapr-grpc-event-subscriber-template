@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: user-container
-        image: mchmarny/dapr-grpc-event-subscriber-template:v0.1.1
+        image: mchmarny/dapr-grpc-event-subscriber-template:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 50001
