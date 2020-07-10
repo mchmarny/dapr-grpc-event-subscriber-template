@@ -34,5 +34,3 @@ spec:
           value: "3500"
         - name: TOPIC_NAME
           value: "events"
-        - name: STORE_NAME
-          value: "store"

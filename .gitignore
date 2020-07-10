@@ -16,3 +16,6 @@
 
 # bin 
 bin
+
+# vendored dependencies
+vendor

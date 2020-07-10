@@ -4,17 +4,17 @@ This Dapr template project accelerates your Dapr gRPC services development in `g
 
 ```shell
 $ make help
-mod            Updates the go modules and vendors all dependencies
-test           Tests the entire project
-build          Builds local release binary
-run            Builds binary and runs it in Dapr
-event          Publishes sample message to Dapr pubsub API
-image          Builds and publish docker image
-lint           Lints the entire project
-tag            Creates release tag
-clean          Cleans up generated files
-reset          Resets go modules
-help           Display available commands
+tidy                           Updates the go modules and vendors all dependencies
+test                           Tests the entire project
+build                          Builds local release binary
+run                            Builds binary and runs it in Dapr
+event                          Publishes sample message to Dapr pubsub API
+image                          Builds and publish docker image
+lint                           Lints the entire project
+tag                            Creates release tag
+clean                          Cleans up generated files
+reset                          Resets go modules
+help                           Display available commands
 ```
 
 This project also includes GitHub actions in [.github/workflows](.github/workflows) that test on each `push` and build images and mark release on each `tag`. 
