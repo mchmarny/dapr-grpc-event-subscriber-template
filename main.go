@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"log"
 	"os"
 	"strings"
@@ -32,7 +33,7 @@ func main() {
 	}
 }
 
-func eventHandler(event *event.TopicEvent) error {
+func eventHandler(ctx context.Context, event *event.TopicEvent) error {
 	logger.Printf("received event ID:%s for topic:%s)", event.ID, event.Topic)
 
 	//TODO: do something with that event
