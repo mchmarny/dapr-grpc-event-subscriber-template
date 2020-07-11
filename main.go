@@ -6,38 +6,38 @@ import (
 	"os"
 	"strings"
 
-	"github.com/dapr/go-sdk/server/event"
-
-	daprd "github.com/dapr/go-sdk/server/grpc"
+	daprd "github.com/dapr/go-sdk/service/grpc"
 )
 
 var (
-	logger      = log.New(os.Stdout, "", 0)
-	servicePort = getEnvVar("PORT", "50001")
-	topicName   = getEnvVar("TOPIC_NAME", "events")
+	logger         = log.New(os.Stdout, "", 0)
+	serviceAddress = getEnvVar("ADDRESS", ":50001")
+	topicName      = getEnvVar("TOPIC_NAME", "events")
 )
 
 func main() {
-	// create serving server and add to it a handler
-	server, err := daprd.NewServer(servicePort)
+	// create Dapr service
+	s, err := daprd.NewService(serviceAddress)
 	if err != nil {
 		log.Fatalf("failed to start the server: %v", err)
 	}
 
-	// add handler to it a handler
-	server.AddTopicEventHandler(topicName, eventHandler)
+	// add handler to the service
+	s.AddTopicEventHandler(topicName, eventHandler)
 
 	// start the server to handle incoming events
-	if err := server.Start(); err != nil {
+	if err := s.Start(); err != nil {
 		log.Fatalf("server error: %v", err)
 	}
 }
 
-func eventHandler(ctx context.Context, event *event.TopicEvent) error {
-	logger.Printf("received event ID:%s for topic:%s with data:'%s')",
-		event.ID, event.Topic, string(event.Data))
+func eventHandler(ctx context.Context, e *daprd.TopicEvent) error {
+	logger.Printf(
+		"event - Source: %s, Topic:%s, ID:%s, Content Type:%s, Data:%s",
+		e.Source, e.Topic, e.ID, e.DataContentType, string(e.Data),
+	)
 
-	//TODO: do something with that event
+	// TODO: do something with the cloud event data
 
 	return nil
 }
