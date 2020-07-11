@@ -34,7 +34,8 @@ func main() {
 }
 
 func eventHandler(ctx context.Context, event *event.TopicEvent) error {
-	logger.Printf("received event ID:%s for topic:%s)", event.ID, event.Topic)
+	logger.Printf("received event ID:%s for topic:%s with data:'%s')",
+		event.ID, event.Topic, string(event.Data))
 
 	//TODO: do something with that event
 
