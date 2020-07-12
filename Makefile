@@ -24,17 +24,17 @@ run: build ## Builds binary and runs it in Dapr
          bin/$(SERVICE_NAME) 
 
 jsonevent: ## Publishes sample JSON message to Dapr pubsub API 
-	curl -v -d '{ "from": "John", "to": "Lary", "message": "hi" }' \
+	curl -d '{ "from": "John", "to": "Lary", "message": "hi" }' \
      -H "Content-type: application/json" \
      "http://localhost:3500/v1.0/publish/events"
 
 xmlevent: ## Publishes sample XML message to Dapr pubsub API 
-	curl -v -d '<message><from>John</from><to>Lary</to></message>' \
+	curl -d '<message><from>John</from><to>Lary</to></message>' \
      -H "Content-type: application/xml" \
      "http://localhost:3500/v1.0/publish/events"
 
 binevent: ## Publishes sample binary message to Dapr pubsub API 
-	curl -v -d '0x18, 0x2d, 0x44, 0x54, 0xfb, 0x21, 0x09, 0x40' \
+	curl -d '0x18, 0x2d, 0x44, 0x54, 0xfb, 0x21, 0x09, 0x40' \
      -H "Content-type: application/octet-stream" \
      "http://localhost:3500/v1.0/publish/events"
 
