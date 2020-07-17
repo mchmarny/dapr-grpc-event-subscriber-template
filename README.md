@@ -2,7 +2,7 @@
 
 [![Test](https://github.com/mchmarny/dapr-grpc-event-subscriber-template/workflows/Test/badge.svg)](https://github.com/mchmarny/dapr-grpc-event-subscriber-template/actions?query=workflow%3ATest) ![Release](https://github.com/mchmarny/dapr-grpc-event-subscriber-template/workflows/Release/badge.svg?query=workflow%3ARelease) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/mchmarny/dapr-grpc-event-subscriber-template) [![Go Report Card](https://goreportcard.com/badge/github.com/mchmarny/dapr-grpc-event-subscriber-template)](https://goreportcard.com/report/github.com/mchmarny/dapr-grpc-event-subscriber-template)
 
-This Dapr template project accelerates your Dapr gRPC services development in `go`.
+Template project to bootstrap a Dapr gRPC services development in `go`.
 
 ```shell
 $ make help
@@ -24,7 +24,7 @@ This project also includes GitHub actions in [.github/workflows](.github/workflo
 * [dapr-grpc-event-subscriber-template](https://github.com/mchmarny/dapr-grpc-event-subscriber-template)
 * [dapr-http-event-subscriber-template](https://github.com/mchmarny/dapr-event-subscriber-template)
 * [dapr-ui-app-template](https://github.com/mchmarny/dapr-ui-app-template)
-* [csharp-dapr-fn-template](https://github.com/azure-octo/csharp-dapr-fn-template)
+* [dapr-http-cron-handler-template](https://github.com/mchmarny/dapr-http-cron-handler-template)
 
 ## usage 
 
