@@ -33,8 +33,8 @@ func main() {
 
 func eventHandler(ctx context.Context, e *daprd.TopicEvent) error {
 	logger.Printf(
-		"event - Source: %s, Topic:%s, ID:%s, Content Type:%s, Data:%s",
-		e.Source, e.Topic, e.ID, e.DataContentType, string(e.Data),
+		"event - Source: %s, Topic:%s, ID:%s, Content Type:%s, Data:%v",
+		e.Source, e.Topic, e.ID, e.DataContentType, e.Data,
 	)
 
 	// TODO: do something with the cloud event data
