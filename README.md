@@ -5,24 +5,13 @@
 ## template usage 
 
 * Click "Use this template" above and follow the wizard to select owner and name your new repo
-* Clone your new repo locally (e.g. `git clone git@github.com:<USERNAME>/<REPO-NAME>.git`)
-* Navigate to your newly cloned repo (`cd <REPO-NAME>`)
-* Cleanup old artifacts (`make init`)
-* Write your logic 
+* Clone your new repo and navigate to it (e.g. `git clone git@github.com:<USERNAME>/<REPO-NAME>.git && cd <REPO-NAME>`)
+* Initialize your project to set the package names and update imports (`make init`)
+* Write your subscription event handling logic 
 
-### building image
+### common operations
 
-> If deploying to Kubernates you will also need to update the components and deployment files in the [deploy](deploy) directory and define your DockerHub username (`DOCKER_USER`)
-
-To build and publish image:
-
-```shell
-make image
-```
-
-### other 
-
-Other Makefile operations to help you bootstrap a Dapr gRPC services development in `go`:
+Common operations to help you bootstrap a Dapr gRPC services development in `go`:
 
 ```shell
 $ make help
@@ -31,7 +20,7 @@ test                           Tests the entire project
 build                          Builds local release binary
 run                            Builds binary and runs it in Dapr
 event                          Publishes sample message to Dapr pubsub API
-image                          Builds and publish docker image
+image                          Builds and publish docker image (requires `DOCKER_USER` variable)
 lint                           Lints the entire project
 tag                            Creates release tag
 clean                          Cleans up generated files
