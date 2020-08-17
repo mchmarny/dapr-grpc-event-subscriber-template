@@ -5,7 +5,7 @@
 ## template usage 
 
 * Click "Use this template" above and follow the wizard to select owner and name your new repo
-* Clone your new repo and navigate to it (e.g. `git clone git@github.com:<USERNAME>/<REPO-NAME>.git && cd <REPO-NAME>`)
+* Clone and navigate to your new repo (`git clone git@github.com:<USERNAME>/<REPO-NAME>.git && cd <REPO-NAME>`)
 * Initialize your project to set the package names and update imports (`make init`)
 * Write your subscription event handling logic 
 
