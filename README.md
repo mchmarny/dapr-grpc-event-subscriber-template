@@ -2,7 +2,27 @@
 
 [![Test](https://github.com/mchmarny/dapr-grpc-event-subscriber-template/workflows/Test/badge.svg)](https://github.com/mchmarny/dapr-grpc-event-subscriber-template/actions?query=workflow%3ATest) ![Release](https://github.com/mchmarny/dapr-grpc-event-subscriber-template/workflows/Release/badge.svg?query=workflow%3ARelease) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/mchmarny/dapr-grpc-event-subscriber-template) [![Go Report Card](https://goreportcard.com/badge/github.com/mchmarny/dapr-grpc-event-subscriber-template)](https://goreportcard.com/report/github.com/mchmarny/dapr-grpc-event-subscriber-template)
 
-Template project to bootstrap a Dapr gRPC services development in `go`.
+## template usage 
+
+* Click "Use this template" above and follow the wizard to select owner and name your new repo
+* Clone your new repo locally (e.g. `git clone git@github.com:<USERNAME>/<REPO-NAME>.git`)
+* Navigate to your newly cloned repo (`cd <REPO-NAME>`)
+* Cleanup old artifacts (`make init`)
+* Write your logic 
+
+### building image
+
+> If deploying to Kubernates you will also need to update the components and deployment files in the [deploy](deploy) directory and define your DockerHub username (`DOCKER_USER`)
+
+To build and publish image:
+
+```shell
+make image
+```
+
+### other 
+
+Other Makefile operations to help you bootstrap a Dapr gRPC services development in `go`:
 
 ```shell
 $ make help
@@ -25,23 +45,6 @@ This project also includes GitHub actions in [.github/workflows](.github/workflo
 * [dapr-http-event-subscriber-template](https://github.com/mchmarny/dapr-event-subscriber-template)
 * [dapr-ui-app-template](https://github.com/mchmarny/dapr-ui-app-template)
 * [dapr-http-cron-handler-template](https://github.com/mchmarny/dapr-http-cron-handler-template)
-
-## template usage 
-
-* Click "Use this template" above and follow the wizard to select owner and name your new repo
-* Clone your new repo locally (e.g. `git clone git@github.com:<USERNAME>/<REPO-NAME>.git`)
-* Navigate to your newly cloned repo (`cd <REPO-NAME>`)
-* Cleanup old artifacts (`make init`)
-
-### deployment files
-
-> If deploying to Kubernates you will also need to update the components and deployment files in the [deploy](deploy) directory and define your DockerHub username (`DOCKER_USER`)
-
-To build and publish image:
-
-```shell
-make image
-```
 
 ## Disclaimer
 
