@@ -28,12 +28,7 @@ reset                          Resets go modules
 help                           Display available commands
 ```
 
-This project also includes GitHub actions in [.github/workflows](.github/workflows) that test on each `push` and build images and mark release on each `tag`. Other Dapr GitHub templates to accelerate development:
-	
-* [dapr-grpc-event-subscriber-template](https://github.com/mchmarny/dapr-grpc-event-subscriber-template)
-* [dapr-http-event-subscriber-template](https://github.com/mchmarny/dapr-event-subscriber-template)
-* [dapr-ui-app-template](https://github.com/mchmarny/dapr-ui-app-template)
-* [dapr-http-cron-handler-template](https://github.com/mchmarny/dapr-http-cron-handler-template)
+This project also includes GitHub actions in [.github/workflows](.github/workflows) that test on each `push` and build images and mark release on each `tag`. Other Dapr GitHub templates to accelerate Dapr development available [here](https://github.com/dapr/go-sdk/tree/master/service).
 
 ## Disclaimer
 
