@@ -17,14 +17,17 @@ Common operations to help you bootstrap a Dapr gRPC services development in `go`
 $ make help
 tidy                           Updates the go modules and vendors all dependencies
 test                           Tests the entire project
+debug                          Runs uncompiled code in Dapr
 build                          Builds local release binary
 run                            Builds binary and runs it in Dapr
-event                          Publishes sample message to Dapr pubsub API
-image                          Builds and publish docker image (requires `DOCKER_USER` variable)
+jsonevent                      Publishes sample JSON message to Dapr pubsub API
+xmlevent                       Publishes sample XML message to Dapr pubsub API
+binevent                       Publishes sample binary message to Dapr pubsub API
+image                          Builds and publish docker image
 lint                           Lints the entire project
 tag                            Creates release tag
 clean                          Cleans up generated files
-reset                          Resets go modules
+init                           Resets go modules
 help                           Display available commands
 ```
 
