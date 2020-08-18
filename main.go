@@ -39,7 +39,7 @@ func main() {
 
 func eventHandler(ctx context.Context, e *common.TopicEvent) error {
 	logger.Printf(
-		"event - PubsubName:%s, Topic:%s, ID:%s, Data: %v",
+		"event - PubsubName:%s, Topic:%s, ID:%s, Data: %s",
 		e.PubsubName, e.Topic, e.ID, e.Data,
 	)
 
