@@ -1,10 +1,6 @@
 RELEASE_VERSION  =v0.1.7
 SERVICE_NAME    ?=$(notdir $(shell pwd))
 DOCKER_USERNAME ?=$(DOCKER_USER)
-REMOTE_REPO_URL :=$(shell git config remote.origin.url)
-PACKAGE_NAME    :=$(subst git@,,$(REMOTE_REPO_URL))
-PACKAGE_NAME    :=$(subst .git,,$(PACKAGE_NAME))
-PACKAGE_NAME    :=$(subst :,/,$(PACKAGE_NAME))
 
 .PHONY: all
 all: help
@@ -57,13 +53,6 @@ clean: ## Cleans up generated files
 	go clean
 	rm -fr ./bin
 	rm -fr ./vendor
-
-.PHONY: init
-init: clean ## Resets go modules 
-	rm -f go.*
-	go mod init $(PACKAGE_NAME)
-	go mod tidy 
-	go mod vendor 
 
 .PHONY: help
 help: ## Display available commands
