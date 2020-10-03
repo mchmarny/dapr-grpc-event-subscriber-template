@@ -1,6 +1,6 @@
 # dapr-grpc-event-subscriber-template [![Go Report Card](https://goreportcard.com/badge/github.com/dapr-templates/dapr-grpc-event-subscriber-template)](https://goreportcard.com/report/github.com/dapr-templates/dapr-grpc-event-subscriber-template)
 
-## template usage 
+### template usage 
 
 * Click "Use this template" above and follow the wizard to select owner and name your new repo
 * When done, clone your new repo, and navigate into it
@@ -30,6 +30,6 @@ help                           Display available commands
 
 This project also includes GitHub actions in [.github/workflows](.github/workflows) that test on each `push` and build images and mark release on each `tag`. Other Dapr GitHub templates to accelerate Dapr development available [here](https://github.com/dapr/go-sdk/tree/master/service).
 
-## License
+### License
 
 This software is released under the [MIT](./LICENSE)
