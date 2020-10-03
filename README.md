@@ -1,6 +1,4 @@
-# dapr-grpc-event-subscriber-template
-
-[![Test](https://github.com/dapr-templates/dapr-grpc-event-subscriber-template/workflows/Test/badge.svg)](https://github.com/dapr-templates/dapr-grpc-event-subscriber-template/actions?query=workflow%3ATest) ![Release](https://github.com/dapr-templates/dapr-grpc-event-subscriber-template/workflows/Release/badge.svg?query=workflow%3ARelease) [![Go Report Card](https://goreportcard.com/badge/github.com/dapr-templates/dapr-grpc-event-subscriber-template)](https://goreportcard.com/report/github.com/dapr-templates/dapr-grpc-event-subscriber-template)
+# dapr-grpc-event-subscriber-template [![Go Report Card](https://goreportcard.com/badge/github.com/dapr-templates/dapr-grpc-event-subscriber-template)](https://goreportcard.com/report/github.com/dapr-templates/dapr-grpc-event-subscriber-template)
 
 ## template usage 
 
