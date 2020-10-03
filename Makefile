@@ -15,7 +15,7 @@ tidy: ## Updates the go modules and vendors all dependencies
 	go mod vendor
 
 .PHONY: test
-test: mod ## Tests the entire project 
+test: tidy ## Tests the entire project 
 	go test -count=1 -race ./...
 
 .PHONY: run
@@ -29,7 +29,7 @@ run: tidy ## Runs uncompiled code in Dapr
          go run main.go
 
 .PHONY: build
-build: mod ## Builds local release binary
+build: tidy ## Builds local release binary
 	CGO_ENABLED=0 go build -a -tags netgo -mod vendor -o bin/$(SERVICE_NAME) .
 
 .PHONY: event
@@ -39,7 +39,7 @@ event: ## Publishes sample JSON message to Dapr pubsub API
      "http://localhost:3500/v1.0/publish/events/messages"
 
 .PHONY: image
-image: mod ## Builds and publish docker image 
+image: tidy ## Builds and publish docker image 
 	docker build -t "$(DOCKER_USERNAME)/$(SERVICE_NAME):$(RELEASE_VERSION)" .
 	docker push "$(DOCKER_USERNAME)/$(SERVICE_NAME):$(RELEASE_VERSION)"
 
