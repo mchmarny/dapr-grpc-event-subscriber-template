@@ -29,7 +29,9 @@ func main() {
 		PubsubName: pubSubName,
 		Topic:      topicName,
 	}
-	s.AddTopicEventHandler(subscription, eventHandler)
+	if err := s.AddTopicEventHandler(subscription, eventHandler); err != nil {
+		log.Fatalf("error adding handler: %v", err)
+	}
 
 	// start the server to handle incoming events
 	if err := s.Start(); err != nil {
@@ -37,7 +39,7 @@ func main() {
 	}
 }
 
-func eventHandler(ctx context.Context, e *common.TopicEvent) error {
+func eventHandler(ctx context.Context, e *common.TopicEvent) (retry bool, err error) {
 	logger.Printf(
 		"event - PubsubName:%s, Topic:%s, ID:%s, Data: %s",
 		e.PubsubName, e.Topic, e.ID, e.Data,
@@ -45,7 +47,7 @@ func eventHandler(ctx context.Context, e *common.TopicEvent) error {
 
 	// TODO: do something with the cloud event data
 
-	return nil
+	return false, nil
 }
 
 func getEnvVar(key, fallbackValue string) string {
